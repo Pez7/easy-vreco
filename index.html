@@ -17,24 +17,26 @@
 			</div>
 			<div class="col-md-3 col-sm-3">
 				<p>Origen</p>
-				<input type="text" class="caja" placeholder="Introducir una ubicación">
+				<input id="origen" type="text" class="caja" placeholder="Introducir una ubicación">
 			</div>
 			<div class="col-md-3 col-sm-3">
 				<p>Destino</p>
-				<input type="text" class="caja" placeholder="Introducir una ubicación">
+				<input id="destino" type="text" class="caja" placeholder="Introducir una ubicación">
 			</div>
 			<div class="col-md-2 col-sm-2">
-				<button id="encuentrame">Ruta</button>
+				<button class="encuentrame">Ruta</button>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12 col-sm-12" id="map">
 				<!-- aqui ira el mapa -->
-			</div> 
+			</div>
 		</div>
 	</section>
-	<script asyn defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCggHFUL-v6lMEWpykkEEmqaDwqzcS3ASs&callback=initMap&Libraries=places"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCashTtrvZOP1KSZdeiWsk3KHFAgnaB0us&libraries=places&callback=initMap"
+        async defer></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
 	<script src="assets/js/main.js"></script>
 </body>
 </html>

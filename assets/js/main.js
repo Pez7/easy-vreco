@@ -6,6 +6,15 @@ function initMap(){
 		zoomControl:false,
 		streetViewControl:false
 	});
+
+	var inputOrigen = (document.getElementById("origen"));
+    var autocomplete = new google.maps.places.Autocomplete(inputOrigen);
+        autocomplete.bindTo("bounds", map);
+
+    var inputDestino = (document.getElementById("destino"));
+    var autocomplete = new google.maps.places.Autocomplete(inputDestino);
+        autocomplete.bindTo("bounds", map);
+
 	function buscar(){
 		if(navigator.geolocation){
 			navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
