@@ -6,13 +6,12 @@ function initMap(){
 		zoomControl:false,
 		streetViewControl:false
 	});
-
-	var inputOrigen = (document.getElementById("origen"));
-    var autocomplete = new google.maps.places.Autocomplete(inputOrigen);
+	var input1 = (document.getElementById("origen"));
+    var autocomplete = new google.maps.places.Autocomplete(input1);
         autocomplete.bindTo("bounds", map);
 
-    var inputDestino = (document.getElementById("destino"));
-    var autocomplete = new google.maps.places.Autocomplete(inputDestino);
+    var input2 = (document.getElementById("destino"));
+    var autocomplete = new google.maps.places.Autocomplete(input2);
         autocomplete.bindTo("bounds", map);
 
 	function buscar(){
@@ -21,6 +20,28 @@ function initMap(){
 		}
 	}
 	document.getElementById("encuentrame").addEventListener("click", buscar);
+
+	document.getElementById("find").addEventListener("click",function(){
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+
+        directionsDisplay.setMap(map);
+
+        var origen = document.getElementById("origen").value;
+        var destino = document.getElementById("destino").value;
+
+        var request = {
+            origin: inicio,
+            destination: fin,
+            travelMode: "DRIVING"
+        };
+
+        directionsService.route(request, function(result, status){
+            if (status == "OK"){
+                directionsDisplay.setDirections(result);
+            }
+        })
+    });
 
 	var latitud,longitud;
 
